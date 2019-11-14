@@ -21,6 +21,18 @@
         <script src="mapCreation.js"></script>
         <script src="drawer.js"></script>
         <script src="client_v1.js"></script>
+        <script type="text/javascript">
+
+        function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;});
+}
+                var dOrigen = getUrlVars()["direccionOrigen"];
+                var dDestino = getUrlVars()["direccionDestino"];
+                document.getElementById("dOrigen").value=dOrigen;
+                document.getElementById("dDestino").value=dDestino;
+        </script>
     </head>
 
     <body>
@@ -30,6 +42,16 @@
                 <h2>Tipos de incidentes</h2>
                 <ul id="types">
                 </ul>
+
+                ------------ parametros pedidos ***************
+                <div>
+                   
+
+                    <input type="text" name="name" id="dOrigen" value="">
+
+                    <input type="text" name="name" id="dDestino" value="">
+                </div>
+
             </div>
         </div>
     </body>

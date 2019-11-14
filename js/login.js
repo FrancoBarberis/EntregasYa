@@ -1,4 +1,3 @@
 function loginButton(){
- window.location="client_v2.html";
-
+window.location.href = 'client_v2.html';
 }

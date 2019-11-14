@@ -1,18 +1,25 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>Login EntregasYa </title>
 
     <link rel="stylesheet" href="./css/estilosLogin.css">
-
+    <script>
+    function loginButton(){
+      if(document.getElementById("login").value=="cliente" &&  document.getElementById("password").value=="123"){
+        window.location.href = 'pantallaPedido.html';
+      }else{
+        alert("usuario es cliente y password 123. Ingreselo correctamente")
+      }
+    }
+    </script>
 
   </head>
   <body style="background-image: url('https://www.elsetge.cat/myimg/f/50-505500_mountain-bike-ciclismo-bicicleta-chica-ciclista-bici-superstition.jpg');   
   background-size: auto">
     
 
-    <form method="post" class="login">
+    <div class="login">
     <p>
       <label for="login">Email:</label>
       <input type="text" name="login" id="login" placeholder="name@example.com">
@@ -24,10 +31,10 @@
     </p>
 
     <p class="login-submit">
-      <button type="submit" id="loginButton" onclick="loginButton()" class="login-button">Login</button>
+      <button id="loginButton" onclick="loginButton()" class="login-button">Login</button>
     </p>
 
-  </form>
+  </div>
 
 
 

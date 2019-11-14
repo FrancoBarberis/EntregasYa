@@ -100,6 +100,8 @@ var bootstrap = function() {
 
     // FIN OPCIÓN 2 ***********************************************************
 
+
+
 };
 
 var skip = function(response) {
@@ -115,6 +117,8 @@ var drawIncidentInMap = function(drawer, incident, map, type){
 
 	drawer.drawIncidentInMap(incident, map);
 };
+
+
 
 
 $(bootstrap);
