@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Realizar Pedido</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <script src="js/infoGetter.js"></script>
+
+	
+	<script>
+		$(document).ready(function() {
+			var infoGetter = new InfoGetter();
+
+
+			function asignarDelivery(idDelivery){
+				$( ".row" ).html('Delivery Asignado con Exito <i class="fa fa-html5" aria-hidden="true" onclick="verDeliverys()">Ver Deliverys</i>');
+				//infoGetter.getDeliverys();
+				//infoGetter.getPosicionesDelivery();
+			}
+
+			function  verDeliverys(){
+				window.location.href = 'verDeliverys.html';
+			}
+			 
+
+
+				var getPedidos = function(){
+				return infoGetter.getPedidosInfo("").
+				then(pedidosRes => mostrarPedidos(pedidosRes.requests))//.
+				//then(deliveryDisponiblesRes => mostrarDeliverys(pedidosRes.requests))
+				}
+
+
+			function mostrarPedidos(pedidos){
+				pedidos.forEach(ped => {
+					$( "#pedidos" ).append("<div class='pedido'>Pedido id: "+ped.id+"</div>");
+					ped.availableDrivers.forEach(dispo => {
+						$( ".pedido" ).append("<div class='disponibles'> Conductor Disponible: "+dispo.driver_id+"<input name='del' id='selecDelivery' onclick='asignarDelivery("+dispo.driver_id+")' class='btn btn-primary' value='Seleccionar Delivery'></div>");
+					});
+				});
+				
+			}
+			
+		
+
+			getPedidos();
+
+		});
+
+	 </script>
+
+
+</head>
+<body>
+	<section class="container">
+		<div class="row">
+		<h3 class="center-align">Lista Pedidos</h3>
+			<article class="col s6 offset-s3">
+				<div>
+			
+				<div id="pedidos"></div>
+					<ul id="pedidos">
+							
+					</ul>
+
+
+				</div>
+
+			</article>
+		</div>
+	</section>
+
+
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+</body>
+</html>

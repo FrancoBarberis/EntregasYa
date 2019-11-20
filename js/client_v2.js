@@ -9,7 +9,7 @@ var bootstrap = function() {
 
     // OPCIÓN 3: Promises. Request asincrónico evitando el callbackhell.   ****
 
-    var requestIncident = function(incident_id) {
+   var requestIncident = function(incident_id) {
         return $.ajax(url + urlIncidents+ incident_id);
     }
     var requestType = function(type_id) {

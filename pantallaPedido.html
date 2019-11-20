@@ -1,17 +1,26 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Formulario de Contacto</title>
+	<title>Realizar Pedido</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
 	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	 <script type="text/javascript">
-	 		function enviarPedido(){
 
-	 				/// HARCODEAR PEDIDO ACA
-	 				var direccionOrigen="PONER ALGO ACA";
+function mostrarPedidos(){
+					window.location.href = 'listaPedidos.html';
+
+				}
+					 
+				
+	 		function enviarPedido(){
+				$( ".row" ).html('Pedido Realizado con Exito <i class="fa fa-html5" aria-hidden="true" onclick="mostrarPedidos()">Ver Pedidos</i>');
+				
+				
+			/// HARCODEAR PEDIDO ACA
+	 				/*var direccionOrigen="PONER ALGO ACA";
 	 				var direccionDestino ="PONER DIRECCION DESTINO ACA";
 
-	 				window.location.href = 'client_v1.html?direccionOrigen='+ direccionOrigen +'&direccionDestino='+ direccionDestino;
+	 				window.location.href = 'client_v1.html?direccionOrigen='+ direccionOrigen +'&direccionDestino='+ direccionDestino;*/
 
 	 		}
 	 </script>
@@ -19,32 +28,46 @@
 <body>
 	<section class="container">
 		<div class="row">
-		<h3 class="center-align">CONTACTO</h3>
+		<h3 class="center-align">Realizar Pedido</h3>
 			<article class="col s6 offset-s3">
 				<div>
 					<div class="input-field">
-						<i class="material-icons prefix">perm_identity</i>
-						<label for="nombre">Nombre</label>
-						<input type="text" name="nombre" required>
+						<i class="material-icons prefix">person_pin</i>
+						<label for="direccionDestino">direccionDestino</label>
+						<input type="text" name="direccionDestino" required>
 					</div>
 
 					<div class="input-field">
 						<i class="material-icons prefix">person_pin</i>
-						<label for="apellido">Apellido</label>
-						<input type="text" name="apellido" required>
-					</div>
-					
-					<div class="input-field">
-						<i class="material-icons prefix">email</i>
-						<label for="email">Email</label>
-						<input type="email" name="email" required>
+						<label for="direccionOrigen">direccionOrigen</label>
+						<input type="text" name="direccionOrigen" required>
 					</div>
 
 					<div class="input-field">
-						<i class="material-icons prefix">mode_edit</i>
-						<label for="mensaje">Mensaje</label>
-						<textarea name="mensaje" id="" rows="10" class="materialize-textarea"  length="140" required></textarea>
+						<i class="material-icons prefix">person_pin</i>
+						<label for="Tamanio">Medidas</label>
+						<input type="text" name="Tamanio" required placeholder="14x13x12(alto,ancho,profundo)">
 					</div>
+
+					<div class="input-field">
+						<i class="material-icons prefix">person_pin</i>
+						<label for="peso">peso</label>
+						<input type="text" name="peso" required placeholder="10">
+					</div>
+
+					<div class="input-field">
+						<i class="material-icons prefix">person_pin</i>
+						<label for="peso">peso</label>
+						<input type="text" name="peso" required placeholder="10">
+					</div>
+
+
+					<div class="input-field">
+						<i class="material-icons prefix">person_pin</i>
+						<label for="hora"></label>
+						<input type="time" name="hora" max="18:00" min="10:00" step="60" required>
+					</div>
+					
 					
 					<p class="center-align">
 						<button class="waves-effect waves-light btn" onclick="enviarPedido()"><i class="material-icons right">send</i>enviar Pedido</button>
